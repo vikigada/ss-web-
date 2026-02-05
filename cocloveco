@@ -1,0 +1,389 @@
+body {
+    margin:0;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg,#495686, #0b0f16);  /* puvodni barva: background: linear-gradient(135deg, #17191d, #6b8bff);*/
+    transition: background 0.2s;   
+}
+
+#bg {
+    margin:0;
+    height: 100%;
+    background: linear-gradient(135deg,#495686, #0b0f16); /* puvodni barva: background: linear-gradient(135deg, #17191d, #6b8bff);*/
+    transition: background 0.2s;  
+   
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .logo {
+         top: 2px;
+         left: 2px;
+         width: 55px;
+    }
+}
+
+#logo-svg {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.95);
+    transform-origin: center;
+  
+}
+
+/* čáry – draw efekt */
+.draw {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 1.6s ease;
+}
+
+/* tečky – zatím skryté */
+.dot {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* AKTIVNÍ STAV */
+#logo-svg.visible {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+#logo-svg.visible .draw {
+  stroke-dashoffset: 0;
+}
+
+#logo-svg.visible .dot {
+  opacity: 1;
+  transition-delay: 1.3s;
+}
+
+.kont {
+  height: 100vh;                 /* 1 slide = 1 obrazovka */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.produkt {
+    color: white;
+    text-decoration: none; 
+    margin: 0 20px; font-size: 18px; 
+    border: 2px solid white;
+    padding: 8px 20px;           
+    border-radius: 999px;  
+    transition: 0.3s;    /* plynulý efekt */
+    cursor: pointer;     /* kurzor ukáže že to jde kliknout */
+
+}
+
+.pilulka {
+    color: white;
+    text-decoration: none; 
+    margin: 0 20px; font-size: 18px; 
+    border: 2px solid white;
+    padding: 8px 20px;   
+    width: 100%;        
+    border-radius: 999px;  
+    transition: 0.3s;    /* plynulý efekt */
+    cursor: pointer; 
+    flex-direction: column; 
+    height: 20px;
+    
+    
+ 
+    font-size: larger;
+    
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Questrial', sans-serif;
+    font-weight: 40px;/* kurzor ukáže že to jde kliknout */
+    display: block;
+    
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 25px;
+    
+    
+    
+
+    
+
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    height: 56px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+@media (min-width: 768px) {
+    .navbar{
+      display: none;
+    }
+}
+
+.hamburger {
+    width: 38px;
+    height: 27px;
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;    
+}
+
+.hamburger.active span:nth-child(1){
+    transform: rotate(45deg) translateY(15.5px);
+}
+
+.hamburger.active span:nth-child(2){
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3){
+    transform: rotate(-45deg) translateY(-15.5px);
+}
+
+.hamburger span {
+    height: 3px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 2px;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 56px;
+    height: 50%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-130%);
+    justify-content: flex-end;
+     backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(10px);
+     box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+     border-radius: 15px;
+     opacity: 0;
+    
+
+}
+
+
+
+.mobile-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.mobile-menu.open .pilulka {
+    animation: slideIn 1s ease forwards; /*styl animace a doba trvani*/
+}
+/* animovani jedotlivych deti*/
+.mobile-menu.open .pilulka:nth-child(1) { animation-delay: 0.1s; }
+.mobile-menu.open .pilulka:nth-child(2) { animation-delay: 0.13s; }
+.mobile-menu.open .pilulka:nth-child(3) { animation-delay: 0.18s; }
+.mobile-menu.open .pilulka:nth-child(4) { animation-delay: 0.23s; }
+
+/* zadani keaframu zceho do ceho animujem*/
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+.team {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px; font-size: 18px;
+    border: 2px solid white; padding: 8px 20px;              
+    border-radius: 999px;
+    transition: 0.3s;    /* plynulý efekt */
+    cursor: pointer;     /* kurzor ukáže že to jde kliknout */
+    
+
+}
+
+
+#menu {
+    opacity: 0;
+    pointer-events: none; /* Menu je neaktivní, když není vidět */
+    transition: opacity 0.5s ease; /* Plynulé prolnutí */
+}
+
+#menu.visible {
+    opacity: 1;
+    pointer-events: auto; /* Menu je aktivní a lze na něj klikat */
+}
+
+/* Vaše hover efekty pro odkazy */
+.produkt, .team {
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#podmenu {
+    position: fixed;
+    top: 1;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0
+
+}
+
+#podmenu.visible2 {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+
+}
+
+@media (max-width: 768px) {
+    #menu {
+        display: none;
+
+    }
+}
+
+@media (max-width: 768px) {
+    #podmenu {
+        display: none;
+
+    }
+}
+
+.horni-lista {
+     color: white; padding: 10px 0;
+     text-align: center; 
+     width: 100%; 
+     position: fixed; 
+     font-family: 'Questrial', sans-serif;
+     top: 10px;
+     transition: 
+     opacity 0.4s ease,
+     transform 0.4s ease;
+}
+
+
+@media (max-width: 768px) {
+    .horni-lista {
+     color: white; padding: 5px 0;
+     text-align: center; 
+     width: 100%; 
+     position: fixed; 
+     top: 15px; 
+     font-family: 'Questrial', sans-serif;
+    }
+}
+
+@media (max-width: 768px) {
+    .zalomeni {
+        word-break: break-all;
+    }
+}
+
+.mobil-nav {
+   display: flex;
+   padding-left: 20px;
+}
+
+.mobil-nav-item {
+    padding: 14px 40px;
+    color: #ffffff;
+    text-decoration: none;
+    border: 2px solid white;
+    clip-path: polygon(
+        10% 0%,
+        100% 0%,
+        90% 100%,
+        0% 100%,
+    );
+}
+
+.velky-nadpis {
+    font-size: 160px;
+    color: #ffffff;
+    margin:0px;
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    margin-bottom: 0px;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .zalomeni {
+        word-break: break-all;
+    }
+}
+
+.maly-nadpis {
+    font-size: 60px;
+    margin:0px;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.p-text1 {
+    font-size: larger;
+    margin:0px;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Questrial', sans-serif;
+    font-weight: 40px;
+}
+
+.pozice-nadpisu {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    padding-top: 44px;
+}
+
+@media (max-width: 768px) {
+   .pozice-nadpisu{
+        height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    padding-top: 0px;
+   }
+}
+
+.shadow {
+    text-shadow: 8px 8px 15px rgba(239, 239, 239, 0.1);
+      
+}
+
