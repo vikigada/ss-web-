@@ -1,4 +1,22 @@
-body {
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- Načtení knihovny model-viewer POUZE JEDNOU do sekce HEAD -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&display=swap" rel="stylesheet">
+
+
+</head>
+
+<style>
+    body {
     margin:0;
     height: 100%;
     overflow: hidden;
@@ -148,7 +166,7 @@ body {
 }
 
 .hamburger.active span:nth-child(1){
-    transform: rotate(45deg) translateY(15.5px);
+    transform: rotate(45deg) translateY(14.5px);
 }
 
 .hamburger.active span:nth-child(2){
@@ -170,7 +188,7 @@ body {
     position: fixed;
     top: 56px;
     height: 50%;
-    width: 35%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     transform: translateY(-130%);
@@ -332,7 +350,8 @@ body {
     color: #ffffff;
     margin:0px;
     text-align: center;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Archivo Black', sans-serif;
+    
     margin-bottom: 0px;
 }
 
@@ -350,7 +369,7 @@ body {
     margin:0px;
     color: #ffffff;
     text-align: center;
-    font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Archivo Black', sans-serif;
 }
 
 .p-text1 {
@@ -387,3 +406,313 @@ body {
       
 }
 
+@media (max-width: 768px) {
+   .shadow{
+     display: none;
+   }
+}
+
+@media (max-width: 768px) {
+   .velky-nadpis{
+     display: block;
+   }
+}
+
+@media (max-width: 768px) {
+   .maly-nadpis{
+     display: block;
+     font-size: 50px;
+   }
+}
+
+
+
+
+</style>
+<body id="bg">
+
+<div class="menu-wraper">
+    <nav class="horni-lista" >
+<div class="logo">
+  <a href="file:///D:/Sout%C4%9B%C5%BEe/SS%20InovationSprint/Web/Sole%20sens%20web.html#team-sekce" >
+    <a href="#vraceni">
+     <svg id="logo-svg" 
+         viewBox="0 0 512 512"
+         xmlns="http://www.w3.org/2000/svg"
+        >
+
+      <circle class="draw"
+              cx="256" cy="256" r="190"
+              stroke="white" stroke-width="18" fill="none"/>
+
+      <path class="draw"
+            d="M160 190
+               C200 140, 312 140, 352 190
+               C392 240, 312 300, 256 320
+               C200 340, 120 300, 160 260"
+            stroke="white" stroke-width="18"
+            fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <path class="draw"
+            d="M352 322
+               C312 372, 200 372, 160 322"
+            stroke="white" stroke-width="18"
+            fill="none" stroke-linecap="round"/>
+
+      <circle class="dot"
+              cx="146" cy="286" r="8" fill="white"/>
+
+      <circle class="dot"
+              cx="366" cy="226" r="8" fill="white"/>
+    </svg>
+    </a>
+  </a>
+</div>
+          <!-- Horní lišta (Navigační menu) -->
+        
+     <div id="menu" class="visible">
+             <a href="file:///D:/Sout%C4%9B%C5%BEe/SS%20InovationSprint/Web/Sole%20sens%20o-nas.html" class="produkt"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';">
+            O nás
+            </a>
+
+            <a href="file:///D:/Sout%C4%9B%C5%BEe/SS%20InovationSprint/Web/Sole%20Sens%20Produkt.html" class="produkt"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';">
+            Produkt
+            </a>
+
+               <a href="file:///D:/Sout%C4%9B%C5%BEe/SS%20InovationSprint/Web/Sole%20Sens%20aplikace.html" class="produkt"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';">
+            Aplikace
+            </a>
+
+            <a href="file:///D:/Sout%C4%9B%C5%BEe/SS%20InovationSprint/Web/Sole%20Sens%20team.html" class="team"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';">
+            Team
+            </a>
+       </div>
+    </nav>
+</div>
+
+
+
+  <div id="podmenu" class=" horni-lista" >
+     <a href="file:///D:/Sout%C4%9B%C5%BEe/SS%20InovationSprint/Web/Sole%20sens%20o-nas.html" class="produkt"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';">
+          Menu  
+     </a>
+  </div>
+
+  <div style="display: flex; justify-content: flex-end;">
+      <header class="navbar">
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu" style="display: flex; margin-bottom: 20px;"> 
+     <a href="file:///D:/Sout%C4%9B%C5%BEe/SS%20InovationSprint/Web/Sole%20sens%20o-nas.html" class="pilulka"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';">
+            O nás
+            </a>
+
+            <a href="file:///D:/Sout%C4%9B%C5%BEe/SS%20InovationSprint/Web/Sole%20Sens%20Produkt.html" class="pilulka"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';">
+            Produkt
+            </a>
+
+               <a href="file:///D:/Sout%C4%9B%C5%BEe/SS%20InovationSprint/Web/Sole%20Sens%20aplikace.html" class="pilulka"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';">
+            Aplikace
+            </a>
+
+            <a href="file:///D:/Sout%C4%9B%C5%BEe/SS%20InovationSprint/Web/Sole%20Sens%20team.html" class="pilulka"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';">
+            Team
+            </a>
+  </nav>
+  </div>
+
+
+        <!-- prostredni nadpis -->
+    <div class="pozice-nadpisu" id="vraceni">
+        <h1  class="shadow velky-nadpis">
+           <span class="zalomeni">Sole</span><span>Sens.
+           </span>
+            <h3 class="shadow maly-nadpis">Svoboda v každém kroku</h3>
+        </h1>
+    </div>
+
+<!--sildy-->
+  <div class="kont">
+    <p class="p-text1">Slide 1 – první myšlenka</p>
+  </div>
+
+  <div class="kont">
+    <p class="p-text1">Slide 2 – pokračování</p>
+  </div>
+
+  <div class="kont">
+    <p class="p-text1">Slide 3 – závěr</p>
+  </div>
+
+  <script>
+    let currentSlide = 0; // Paměť, na jakém slidu jsem
+let isScrolling = false; // Ochrana proti nadměrnému scrollu 
+
+const slides = document.querySelectorAll('.kont'); // Najde všechny prvky s třídou kont
+const menu = document.getElementById('menu');
+const podmenu = document.getElementById('podmenu'); //zavedem constantu podmenu a najde me ho
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
+const hamburegr = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+//--- Zamezí klasickému scrollu prohlížeče
+function onWheel(e) {
+  e.preventDefault(); 
+//---------------------------------------  
+
+
+
+//---scrolovani-------------------------------------------------------------------------------------------------
+  if (isScrolling) return; //pokud se scroluje zastav
+  if (Math.abs(e.deltaY) < 20) return; //pokud bude touchped vice nez 20 zastav (rptoti driftovani)
+
+  let nextSlide = currentSlide; //najdeme se slidy
+  if (e.deltaY > 0) { //pokud bude smer vetsi nez 0 provede se program pod
+    if (currentSlide < slides.length - 1) { //pokud nebudeme na slidu posuneme na dalsi 
+      nextSlide++; //pricteme slidy do stuckerua 
+    }
+  } else { //jinak pobezi kod pod
+    if (currentSlide > 0) { //pokud slide bude > nez 0 treba 1 tak slide odecteme ze stuckeru
+      nextSlide--;
+    }
+  }
+  if (nextSlide === currentSlide) return; //jestli to bude possledni slide zastav 
+
+  isScrolling = true; 
+  currentSlide = nextSlide;
+//--------------------------------------------------------------------------------------------------------------  
+
+
+
+  // --- skryvani menu -----------------------------------------------------------------------------------------
+//najde id menu 
+if (menu) {
+    menu.classList.toggle('visible', currentSlide === 0);     // Pokud je currentSlide 0, třída 'visible' se přidá. Jinak se odebere.
+}
+updatePodmenu();
+
+
+ //pridani podmenu---
+function updatePodmenu() {
+  if (!podmenu) return; // vykricnik zaneman ze: pokud podmenu neexistuje okamzite skocni funkci
+
+  if (currentSlide >= 1) {
+    podmenu.classList.add('visible2');
+  } else {
+    podmenu.classList.remove('visible2');
+  }
+}
+//-----
+
+//najeti na podmenu a zobrazeni menu---
+podmenu.addEventListener('mouseenter', function() {
+    // Když najedu na podmenu...
+     setTimeout(() => { 
+    podmenu.classList.remove('visible2'); // Podmenu zmizí
+    menu.classList.add('visible');        // Hlavní menu se objeví
+     }, 200);
+});
+//---
+ 
+//odebrani menu a zobrazeni podmenu kdyz vyjedu z menu---
+menu.addEventListener('mouseleave', () => {
+    if (currentSlide === 0) return;
+
+    menu.classList.remove('visible');
+    podmenu.classList.add('visible2');
+});
+//---
+
+  // Plynulý posun na slide---
+  window.scrollTo({
+    top: currentSlide * window.innerHeight,
+    behavior: 'smooth'
+  });
+//---
+  
+//pocka 1s a pak udela isScroling---
+  setTimeout(() => { 
+    isScrolling = false;
+  }, 1000);
+}
+//---
+
+// Registrace události kolečka
+window.addEventListener('wheel', onWheel, { passive: false });
+//-------------------------------------------------------------------------------------------------------
+
+
+
+// --- LOGO ANIMACE ---------------------------------------------------------------------------
+const logo = document.getElementById('logo-svg');//zavedeme constantu loga a najde me logo
+
+//pokud amme logo tak---
+if (logo) { 
+  const paths = logo.querySelectorAll('.draw');//zavedeme constantu pro kresleni
+    paths.forEach(path => { //prok zadou cestu se provede
+  const length = path.getTotalLength(); //zavede s econstanta cesty a zmeri eji cela delka
+      path.style.strokeDasharray = length;//rozdeleni cary na vice kousku
+    });
+    //---
+
+ //casovac kdy se prida viditelne logo (2ms)---
+    setTimeout(() => {
+      logo.classList.add('visible');
+    }, 200);
+}
+//-------------------------------------------------------------------------------------------
+
+
+
+//mobil scroll-------------------------------------------------------
+if (isMobile) {
+  document.body.style.overflowY = "auto";
+} else {
+  document.body.style.overflow = "hidden";
+  window.addEventListener('wheel', onWheel, { passive: false });
+}
+//----------------------------------------------------------------
+
+//hamburegr-----------------------------------
+hamburegr.addEventListener("click", () => {
+hamburegr.classList.toggle("active");
+mobileMenu.classList.toggle("open");
+})
+
+hamburegr.addEventListener("click", (e) => {
+    e.stopPropagation(); // zabrání zavření hned po kliknutí
+    menu.classList.toggle("open");
+});
+
+document.addEventListener("click",() => {
+ mobileMenu.classList.remove("open");
+ hamburger.classList.remove("active");
+})
+
+//-------------------------------------
+  </script>
+</body>
+</html>
